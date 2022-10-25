@@ -1,0 +1,9 @@
+<% @cart.each do |e| %>
+    <p>
+        <%= Product.find(e.product_id).name %>
+        <%= Product.find(e.product_id).price %>
+        <%= e.qty %>
+        <%= link_to 'delete',  cartitem_path(e.id), method: :delete %>
+    </p>
+<% end %>
+<%= link_to '戻ります',  products_path %>

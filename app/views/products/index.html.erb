@@ -1,0 +1,10 @@
+<% @products.each do |e| %>
+    <p>
+        <%= e.name %>
+        <%= e.price %>
+        <%= link_to 'delete',  "/products/#{e.id}", method: :delete %>
+        <%= link_to 'カートに追加',  new_cartitem_path(products_id: e.id)%>
+    </p>
+<% end %>
+<%= link_to '追加', new_product_path %>
+<%= link_to 'カートを表示', cart_path(session[:cart_id]) %>
